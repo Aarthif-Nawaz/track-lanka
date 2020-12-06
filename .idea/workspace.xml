@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1fd02fb-0742-4f85-83b5-8293cb72d5db" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Proxy/proxy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Proxy/proxy.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Spiders/scrape_spiders.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Spiders/scrape_spiders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.py" afterDir="false" />
-    </list>
+    <list default="true" id="b1fd02fb-0742-4f85-83b5-8293cb72d5db" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -188,7 +182,7 @@
       <workItem from="1607239557031" duration="1095000" />
       <workItem from="1607240674852" duration="2444000" />
       <workItem from="1607254640755" duration="1333000" />
-      <workItem from="1607257320413" duration="3706000" />
+      <workItem from="1607257320413" duration="4066000" />
     </task>
     <servers />
   </component>
