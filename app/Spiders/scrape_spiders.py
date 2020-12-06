@@ -19,7 +19,7 @@ chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
 
 
 def woolsworth(producturl):
-    driver = webdriver.Chrome("C:\\Users\\Aarthif\\Desktop\\Price Tracker\\PriceTracker\\Spiders\\chromedriver.exe",options=chrome_options)
+    driver = webdriver.Chrome("/app\\Spiders\\chromedriver.exe", options=chrome_options)
     url = ""
     price = ""
     try:
@@ -34,7 +34,7 @@ def woolsworth(producturl):
     return {"name":url[-1],"price": "".join(str(price).split())}
 
 def officeWorks(producturl):
-    driver = webdriver.Chrome("C:\\Users\\Aarthif\\Desktop\\Price Tracker\\PriceTracker\\Spiders\\chromedriver.exe",options=chrome_options)
+    driver = webdriver.Chrome("/app\\Spiders\\chromedriver.exe", options=chrome_options)
     price = ""
     url = ""
     try:
@@ -49,7 +49,7 @@ def officeWorks(producturl):
 
 
 def scrapeWeb():
-    driver = webdriver.Chrome("C:\\Users\\Aarthif\\Desktop\\Price Tracker\\PriceTracker\\Spiders\\chromedriver.exe")
+    driver = webdriver.Chrome("/app\\Spiders\\chromedriver.exe")
     el = driver.find_element_by_xpath('/html/body/div[4]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[2]/div[1]')
     print(el.text)
 

@@ -1,9 +1,9 @@
 from flask import render_template,url_for,flash,redirect,request
-from PriceTracker import app,db,bcrypt
-from PriceTracker.DB import User,Tracking
-from PriceTracker.forms import LoginForm,RegistrationForm
+from app import app,db,bcrypt
+from app.DB import User,Tracking
+from app.forms import LoginForm,RegistrationForm
 from flask_login import login_user, current_user, logout_user
-from PriceTracker.Spiders.scrape_spiders import woolsworth,officeWorks
+from app.Spiders.scrape_spiders import woolsworth,officeWorks
 
 
 

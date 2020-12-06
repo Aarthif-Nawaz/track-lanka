@@ -1,7 +1,7 @@
-from PriceTracker import db
-from PriceTracker.DB import Tracking,User
-from PriceTracker.Spiders.scrape_spiders import woolsworth,officeWorks
-from PriceTracker.send_email import send_email
+from app import db
+from app.DB import Tracking,User
+from app.Spiders.scrape_spiders import woolsworth,officeWorks
+from app.send_email import send_email
 
 def fetchProductsData():
     tracking = Tracking.query.all()

@@ -1,6 +1,6 @@
-from PriceTracker import app
-from PriceTracker.startTracking import startTracking
-from PriceTracker import sheduler
+from app import app
+from app.startTracking import startTracking
+from app import sheduler
 
 
 if __name__== '__main__':

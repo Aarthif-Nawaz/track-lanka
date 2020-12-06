@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-import PriceTracker.config
+import app.config
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_apscheduler import APScheduler
@@ -19,9 +19,9 @@ login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 admin = Admin(app)
 
-from PriceTracker.DB import User,Tracking
+from app.DB import User,Tracking
 
 admin.add_view(ModelView(User,db.session))
 admin.add_view(ModelView(Tracking,db.session))
 
-from PriceTracker import routes
+from app import routes

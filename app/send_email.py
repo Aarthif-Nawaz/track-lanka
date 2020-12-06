@@ -1,7 +1,7 @@
 ## importss
 import smtplib
 from email.message import EmailMessage
-from PriceTracker.config import EMAIL_ADDRESS,PASSWORD
+from app.config import EMAIL_ADDRESS,PASSWORD
 
 
 def send_email(to,subject,body):
