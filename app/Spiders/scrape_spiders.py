@@ -1,7 +1,9 @@
 from selenium import webdriver
-
+import os
+from app.config import exe
 
 chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 chrome_options.add_experimental_option('prefs', {
     'credentials_enable_service': False,
     'profile': {
@@ -15,11 +17,12 @@ chrome_options.add_argument("--disable-infobars")
 chrome_options.add_argument("--disable-user-media-security=true")
 chrome_options.add_argument("--disable-notifications")
 chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
 chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
-
+driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
 def woolsworth(producturl):
-    driver = webdriver.Chrome("/app\\Spiders\\chromedriver.exe", options=chrome_options)
     url = ""
     price = ""
     try:
@@ -34,7 +37,6 @@ def woolsworth(producturl):
     return {"name":url[-1],"price": "".join(str(price).split())}
 
 def officeWorks(producturl):
-    driver = webdriver.Chrome("/app\\Spiders\\chromedriver.exe", options=chrome_options)
     price = ""
     url = ""
     try:
@@ -48,9 +50,3 @@ def officeWorks(producturl):
     return {"name": url[-1],"price": "".join(str(price).split())}
 
 
-def scrapeWeb():
-    driver = webdriver.Chrome("/app\\Spiders\\chromedriver.exe")
-    el = driver.find_element_by_xpath('/html/body/div[4]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[2]/div[1]')
-    print(el.text)
-
-#scrapeWeb()
