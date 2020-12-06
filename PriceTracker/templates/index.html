@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<h1>Welcome to Price Tracker , {{current_user.name}}</h1>
+<div class="banner" style="padding:15px; text-align:center;margin-left: 200px">
+    <div class="banner-content" style="margin-left: 200px">
+        <p>Price Tracker On the Go</p>
+        <a href="{{ url_for('tracking') }}" class="btn btn-primary">Start Tracking</a>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3" style="width: 1300px; margin-left: -160px;margin-top: 40px">
+                <h2><b>Price Tracking </b></h2>
+                <table class="table table-hover table-striped">
+                    <tr>
+                        <th>ID</th>
+                        <th>Store Name</th>
+                        <th>Product Name</th>
+                        <th>Current Price</th>
+                        <th>Desired Price</th>
+                        <th>Action</th>
+                    </tr>
+                    {% for row in products %}
+                    <tr>
+                        <td>{{row.id}}</td>
+                        <td>{{row.store_name}}</td>
+                        <td>{{row.product_name}}</td>
+                        <td>{{row.current_price}}</td>
+                        <td>{{row.set_price}}</td>
+                        <td>
+                            <a href="/delete/{{row.id}}" class="btn btn-danger btn-xs"
+                               onclick="return confirm('Are You Sure To Delete')">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<h1>Welcome to Price Tracker</h1>
+<div class="banner" style="padding:15px; text-align:center;margin-left: 200px">
+    <div class="banner-content" style="margin-left: 200px">
+        <p>Price Tracker On the Go</p>
+        <a href="{{ url_for('tracking') }}" class="btn btn-primary">Start Tracking</a>
+    </div>
+</div>
+{% endif %}
+{% endblock content %}
